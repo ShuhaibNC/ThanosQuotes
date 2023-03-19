@@ -1,0 +1,97 @@
+
+body {
+	position: relative;
+	background: black;
+	color: white;
+	text-align: center;
+	margin: 0;
+}
+
+header {
+	background-color: #004b72;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Google Sans';
+}
+
+.quote-container {
+	margin: 0 auto;
+	max-width: 600px;
+	padding: 20px;
+	font-family: 'Google Sans';
+}
+
+blockquote {
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+cite {
+	display: block;
+	text-align: right;
+}
+
+button{
+				color: white;
+				background-color: #004b72;
+				border: none;
+				border-radius: 6px;
+				font-size: 16px;
+				padding: 15px;
+				
+}
+
+footer {
+				background-color: #3c3c3c;
+				color: #fff;
+} 
+
+
+@media only screen and (min-width: 768px) {
+
+h1 {
+				font-size: 60px;
+}
+.quote-container {
+max-width: 600px;
+}
+
+blockquote {
+	font-size: 48px; 
+	line-height: 47px; 
+	margin-bottom: 30px; 
+}
+
+cite {
+	font-size: 35px; 
+	line-height: 34px; 
+	margin-top: 30px; 
+}
+
+button{
+				color: white;
+				background-color: #004b72;
+				border: none;
+				border-radius: 12px;
+				font-size: 35px;
+				padding: 28px;
+				padding-left: 55px;
+				padding-right: 55px;
+}
+
+footer {
+				background-color: #004b72;
+				color: #fff;
+				font-size: 42px;
+				padding: 20px;
+				font-family: 'Google Sans';
+				font-weight: bold;
+} 
+
+}
+
+

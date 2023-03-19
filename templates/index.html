@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans">
+				<title>Thanos Quote</title>
+				
+</head>
+<body>
+				<header>
+									<h1>Thanos Quotes</h1>
+				</header>
+				<div class="quote-container">
+								<blockquote>
+	<p>{{thanos_quote}}</p>
+	<cite>- Thanos</cite>
+</blockquote>
+				</div>
+				<button onclick="location.reload()">Refresh</button>
+				<footer style="position: fixed; bottom: 0; width: 100%; text-align: center;">
+  <p>Made with ❤️ by ShuhaibNC</p>
+</footer>
+
+</body>
+</html>
