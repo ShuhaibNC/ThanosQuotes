@@ -2,8 +2,6 @@ from flask import Flask, render_template, url_for
 from funcs import get_thanosquote
 import os
 
-
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,4 +10,5 @@ def thanos():
             'index.html', 
             thanos_quote=get_thanosquote(),
             )
-app.run()
+if __name__ == '__main__':
+    app.run()
