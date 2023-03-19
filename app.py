@@ -12,4 +12,4 @@ def thanos():
             'index.html', 
             thanos_quote=get_thanosquote(),
             )
-app.run(debug=False, host='0.0.0.0', port=port)
+app.run()
