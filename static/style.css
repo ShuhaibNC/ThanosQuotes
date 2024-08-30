@@ -1,17 +1,23 @@
 
-body {
+html, body {
 	position: relative;
-	background: black;
 	color: white;
 	text-align: center;
 	margin: 0;
+	background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+background-position: center;
+	    
 }
 
 header {
-	background-color: #004b72;
+	/*background-color: #004b72;*/
 	color: #fff;
 	padding: 20px;
 	text-align: center;
+	background-color: rgba(255, 255, 255, 0.0); 
+  backdrop-filter: blur(10px);
 }
 
 h1 {
@@ -21,8 +27,10 @@ h1 {
 .quote-container {
 	margin: 0 auto;
 	max-width: 600px;
-	padding: 20px;
+	padding: 30px;
 	font-family: 'Google Sans';
+	background-color: rgba(255, 255, 255, 0.0); 
+  backdrop-filter: blur(10px);
 }
 
 blockquote {
@@ -46,7 +54,9 @@ button{
 }
 
 footer {
-				background-color: #3c3c3c;
+				/*background-color: #3c3c3c;*/
+				background-color: rgba(255, 255, 255, 0.0); 
+  backdrop-filter: blur(10px);
 				color: #fff;
 } 
 
@@ -57,7 +67,14 @@ h1 {
 				font-size: 60px;
 }
 .quote-container {
+margin-top: 20px;
+border-radius: 50px;
 max-width: 600px;
+padding: 50px;
+background-color: rgba(255, 255, 255, 0); 
+  backdrop-filter: blur(10px);
+margin-bottom: 20px;
+text-align: center;
 }
 
 blockquote {
@@ -84,7 +101,9 @@ button{
 }
 
 footer {
-				background-color: #004b72;
+				/*background-color: #004b72;*/
+				background-color: rgba(255, 255, 255, 0.0); 
+  backdrop-filter: blur(10px);
 				color: #fff;
 				font-size: 42px;
 				padding: 20px;
