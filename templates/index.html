@@ -99,12 +99,14 @@
     
     <div class="quote-container">
         <blockquote>
-            <p>{{thanos_quote}}</p>
+            <p id="quote">{{thanos_quote}}</p>
             <cite>- Thanos</cite>
         </blockquote>
     </div>
     
     <button onclick="location.reload()">Refresh</button>
+    <button onclick="window.location.href='pass';">Password Generator 🔑</button>
+    
     <button onclick="window.location.href='about';">About</button>
     
     <footer>
@@ -112,6 +114,9 @@
     </footer>
 
     <script>
+        function changeQuote(){
+            document.getElementById("quote").innerText = "{{thanos_quote}}"
+        }
         function updateParticlesConfig() {
             let config = {
                 "particles": {
