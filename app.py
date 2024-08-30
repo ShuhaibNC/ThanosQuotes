@@ -10,5 +10,13 @@ def thanos():
             thanos_quote=get_thanosquote(),
             imgg=get_img(), 
             )
+            
+@app.route('/about')
+def about():
+    return render_template(
+            'about.html', 
+            )
+            
+            
 if __name__ == '__main__':
     app.run()

@@ -1,31 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-				<meta charset="UTF-8">
-				<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans">
-			 <title>Thanos Quote</title>
-				
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>NCAPI - ShuhaibNC</title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        overflow: hidden;
+        background: black;
+        color: white;
+        
+    }
+    #particles-container {
+        top: 0;
+        left: 0;
+        z-index: 1; /* Ensure it stays behind other content */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 50% 50%;
+        transition: all .3s;
+    }
+    
+    header, .quote-container, button, footer {
+        position: relative;
+        z-index: 1; /* Ensures these elements are above the particles */
+    }
+    header {
+        padding: 20px;
+        backdrop-filter: blur(10px);
+    }
+    h1 {
+        font-family: 'Google Sans';
+        margin: 0;
+    }
+    .quote-container {
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 30px;
+        
+        backdrop-filter: blur(1px);
+    }
+    blockquote {
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+    cite {
+        display: block;
+        text-align: right;
+    }
+    button {
+        color: white;
+        background-color: rgba(13,13,13,0.5);
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        padding: 15px;
+        width: 90%;
+        text-align:center;
+        margin: 10px 20px;
+    }
+    footer {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        font-family: 'Google Sans';
+        font-weight: bold;
+        font-size: 13px;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    </style>
 </head>
-<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyQVH0kiJ5hiQ3qXCe7_MpLHjs7xLOQYNb2lKSEUWT1AWq23lMy7RHSWLw&s=10')">
-				<header>
-									<h1>Thanos Quotes</h1>
-				</header>
-				
-				<div class="quote-container">
-								<blockquote>
-	<p>{{thanos_quote}}</p>
-	<cite>- Thanos</cite>
-</blockquote>
-				</div>
-				
-				<button onclick="location.reload()">Refresh</button><br>
-				
+<body>
+    <div id="particles-container"></div>
+    <header style="font-size: 24px;">
+        <h1>NCAPI</h1>
+    </header>
+    
+    <div class="quote-container">
+        <blockquote>
+            <p>{{thanos_quote}}</p>
+            <cite>- Thanos</cite>
+        </blockquote>
+    </div>
+    
+    <button onclick="location.reload()">Refresh</button>
+    <button onclick="window.location.href='about';">About</button>
+    
+    <footer>
+        <p>Made with ❤️ by ShuhaibNC</p>
+    </footer>
 
-			
-				<footer style="position: fixed; bottom: 0; width: 100%; text-align: center;">
-  <p>Made with ❤️ by ShuhaibNC</p>
-</footer>
+    <script>
+        function updateParticlesConfig() {
+            let config = {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            };
 
+            if (window.innerWidth <= 767) {
+                // Adjust configuration for mobile screens
+                config.particles.size.value = 2;
+                config.particles.number.value = 50;
+            }
+
+            particlesJS('particles-container', config);
+        }
+
+        window.onload = updateParticlesConfig;
+        window.onresize = updateParticlesConfig; // Update on resize as well
+    </script>
 </body>
 </html>
